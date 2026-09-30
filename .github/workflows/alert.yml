@@ -4,11 +4,14 @@ on:
   push:
     branches: [ master ]
 
+permissions:
+  contents: read
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@0717577d45739eb3c851188b29f50ed6c0b2194e  # v2
     - name: Update unlisted
       run: |
         curl --fail https://born-to-llama.herokuapp.com/refresh
